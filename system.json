@@ -1,0 +1,37 @@
+{ "version": "v1.00", 
+    "description": "test system", 
+    "info": { 
+      "id": 1, 
+      "name": "sampleproject",
+      "repository": "git@github.com:eva-beaver/sampleproject.git",
+      "description": "System Config Sample project.", 
+      "categories": [],
+      "environment": "Dev"
+    },
+    "services": [ 
+        { 
+          "name": "user",
+          "description": "Test user service",
+          "type": "Java", 
+          "version": "V1",
+          "interfaces": [
+              {
+                  "type": "rest",
+                  "definition": "userRest"
+              }
+          ]
+        },
+        { 
+          "name": "product",
+          "description": "Test product service",
+          "type": "Java", 
+          "version": "V1",
+          "interfaces": [
+              {
+                  "type": "rest",
+                  "definition": "productRest"
+              }
+          ]
+          }
+    ]    
+}  
