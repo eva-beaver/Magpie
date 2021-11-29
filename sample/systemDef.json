@@ -1,0 +1,40 @@
+{ "version": "v1.00", 
+    "description": "test system", 
+    "info": { 
+      "id": 1, 
+      "name": "sampleproject",
+      "repository": "git@github.com:eva-beaver/sampleproject.git",
+      "description": "System Config Sample project.", 
+      "definitionDir": "./defs", 
+      "categories": [],
+      "environment": "Dev"
+    },
+    "services": [ 
+        { 
+          "name": "user",
+          "description": "Test user service",
+          "type": "python", 
+          "version": "V1",
+          "interfaces": [
+              {
+                "type": "rest",
+                "action": "producer",
+                "definition": "userRest"
+              }
+          ]
+        },
+        { 
+          "name": "product",
+          "description": "Test product service",
+          "type": "python", 
+          "version": "V1",
+          "interfaces": [
+              {
+                "type": "rest",
+                "action": "producer",
+                "definition": "productRest"
+              }
+          ]
+          }
+    ]    
+}  
