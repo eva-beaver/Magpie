@@ -29,12 +29,17 @@
           "type": "python", 
           "version": "V1",
           "interfaces": [
-              {
-                "type": "rest",
-                "action": "producer",
-                "definition": "productRest"
-              }
-          ]
+            {
+              "type": "rest",
+              "action": "producer",
+              "definition": "productRest"
+            },
+            {
+              "type": "kafka",
+              "action": "producer",
+              "definition": "productMsg"
+            }
+      ]
           }
     ]    
 }  

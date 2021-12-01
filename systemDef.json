@@ -5,6 +5,7 @@
       "name": "sampleproject",
       "repository": "git@github.com:eva-beaver/sampleproject.git",
       "description": "System Config Sample project.", 
+      "definitionDir": "./defs", 
       "categories": [],
       "environment": "Dev"
     },
@@ -12,24 +13,26 @@
         { 
           "name": "user",
           "description": "Test user service",
-          "type": "Java", 
+          "type": "python", 
           "version": "V1",
           "interfaces": [
               {
-                  "type": "rest",
-                  "definition": "userRest"
+                "type": "rest",
+                "action": "producer",
+                "definition": "userRest"
               }
           ]
         },
         { 
           "name": "product",
           "description": "Test product service",
-          "type": "Java", 
+          "type": "python", 
           "version": "V1",
           "interfaces": [
               {
-                  "type": "rest",
-                  "definition": "productRest"
+                "type": "rest",
+                "action": "producer",
+                "definition": "productRest"
               }
           ]
           }
