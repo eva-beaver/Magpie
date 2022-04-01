@@ -15,26 +15,56 @@
           "description": "Test user service",
           "type": "python", 
           "version": "V1",
+          "buildDockerfile": "false",
           "interfaces": [
               {
                 "type": "rest",
                 "action": "producer",
-                "definition": "userRest"
-              }
-          ]
+                "definition": "userRest",
+                "supports": "CRUD",
+                "emits": "kafka"
+              },
+              {
+                "type": "kafka",
+                "action": "producer",
+                "definition": "userKafka",
+                "supports": "CRUD"
+              }                ]
         },
         { 
           "name": "product",
           "description": "Test product service",
           "type": "python", 
           "version": "V1",
+          "buildDockerfile": "false",
           "interfaces": [
               {
                 "type": "rest",
                 "action": "producer",
-                "definition": "productRest"
-              }
-          ]
+                "definition": "productRest",
+                "supports": "CRUD",
+                "emits": "kafka"
+              },
+              {
+                "type": "kafka",
+                "action": "producer",
+                "definition": "productKafka",
+                "supports": "CRUD"              },
+              {
+                "type": "kafka",
+                "action": "consumer",
+                "definition": "userKafka",
+                "supports": "CRUD"
+              }        
+            ]
           }
-    ]    
+    ], 
+    "interfaces": [
+      {
+        "name": "userRest"
+      },
+      {
+        "name": "productRest"
+      }
+    ]
 }  
