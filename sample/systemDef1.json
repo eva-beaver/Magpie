@@ -1,0 +1,153 @@
+{ "version": "v1.00", 
+  "description": "test system", 
+  "info": { 
+    "id": 1, 
+    "name": "sampleproject",
+    "repository": "git@github.com:eva-beaver/sampleproject.git",
+    "description": "System Config Sample project.", 
+    "definitionDir": "./defs", 
+    "categories": [],
+    "environment": "Dev"
+  },
+  "domains": [
+    {
+      "name": "user",
+      "description": "Test user domain",
+      "services": [ 
+        { 
+          "name": "user1",
+          "description": "Test user service",
+          "type": "python", 
+          "version": "V1",
+          "buildDockerfile": "false",
+          "interfaces": [
+            {
+              "type": "rest",
+              "action": "producer",
+              "definition": "userRest",
+              "supports": "CRUD",
+              "emits": "kafka"
+            },
+            {
+              "type": "kafka",
+              "action": "producer",
+              "definition": "userKafka",
+              "supports": "CRUD"
+            }
+          ]
+        },
+        { 
+          "name": "user2",
+          "description": "Test user service 2",
+          "type": "python", 
+          "version": "V1",
+          "buildDockerfile": "false",
+          "interfaces": [
+            {
+              "type": "rest",
+              "action": "producer",
+              "definition": "userRest",
+              "supports": "CRUD",
+              "emits": "kafka"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "product",
+      "description": "Test product domain",
+      "services": [ 
+        { 
+          "description": "Test product service",
+          "type": "python", 
+          "version": "V1",
+          "buildDockerfile": "false",
+          "interfaces": [
+            {
+              "type": "rest",
+              "action": "producer",
+              "definition": "productRest",
+              "supports": "CRUD",
+              "emits": "kafka"
+            },
+            {
+              "type": "kafka",
+              "action": "producer",
+              "definition": "productKafka",
+              "supports": "CRUD"
+            },
+            {
+              "type": "kafka",
+              "action": "consumer",
+              "definition": "userKafka",
+              "supports": "CRUD"
+            }        
+          ]
+        }
+      ]
+    }
+  ], 
+  "services": [ 
+    { 
+      "name": "user",
+      "description": "Test user service",
+      "type": "python", 
+      "version": "V1",
+      "buildDockerfile": "false",
+      "interfaces": [
+        {
+          "type": "rest",
+          "action": "producer",
+          "definition": "userRest",
+          "supports": "CRUD",
+          "emits": "kafka"
+        },
+        {
+          "type": "kafka",
+          "action": "producer",
+          "definition": "userKafka",
+          "supports": "CRUD"
+        }
+      ]
+    },
+    { 
+      "name": "product",
+      "description": "Test product service",
+      "type": "python", 
+      "version": "V1",
+      "buildDockerfile": "false",
+      "interfaces": [
+        {
+          "type": "rest",
+          "action": "producer",
+          "definition": "productRest",
+          "supports": "CRUD",
+          "emits": "kafka"
+        },
+        {
+          "type": "kafka",
+          "action": "producer",
+          "definition": "productKafka",
+          "supports": "CRUD"
+        },
+        {
+          "type": "kafka",
+          "action": "consumer",
+          "definition": "userKafka",
+          "supports": "CRUD"
+        }        
+      ]
+    }
+  ], 
+  "interfaces": [
+    {
+      "name": "userRest",
+      "description": "Test user reset interface"
+    },
+    {
+      "name": "productRest",
+      "description": "Test product reset interface"
+    }
+  ]
+}  

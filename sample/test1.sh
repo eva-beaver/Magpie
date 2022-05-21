@@ -1,0 +1,1 @@
+../bin/sysgen.sh -m systemDef1.json -d yes
