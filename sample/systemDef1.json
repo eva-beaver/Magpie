@@ -7,12 +7,20 @@
     "description": "System Config Sample project.", 
     "definitionDir": "./defs", 
     "categories": [],
-    "environment": "Dev"
+    "environment": "Dev",
+    "gitconfig": {
+      "repository": "git@github.com:eva-beaver/sampleproject.git",
+      "baseDir": "/home/eva/projects/testgen/",
+      "dir": "sampleproject",
+      "init": "true",
+      "branch": "generated"
+    }
   },
   "domains": [
     {
       "name": "user",
       "description": "Test user domain",
+      "dir": "user",
       "services": [ 
         { 
           "name": "user1",
@@ -57,6 +65,7 @@
     {
       "name": "product",
       "description": "Test product domain",
+      "dir": "product",
       "services": [ 
         { 
           "description": "Test product service",
